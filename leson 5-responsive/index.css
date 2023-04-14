@@ -1,0 +1,82 @@
+.main {
+    height: 300px;
+}
+
+/* body {
+    background: aqua;
+    color: black;
+} */
+
+/* @media not|only mediatype and (mediafeature: value) */
+/* Media type: screen, type, speech */
+@media all {
+    body {
+        background-color: yellow;
+    }
+}
+
+.hero {
+    background-color: black;
+    color: white;
+}
+
+.office {
+    background-image: url("./images/food.jpg");
+    height: 400px;
+    background-position: center center;
+}
+
+/* Nó chỉ apply cho những màn hình width < hoặc = 480px */
+/* Desktop first */
+@media only screen and (max-width: 480px) {
+    .hero {
+        background-color: blue;
+        border-radius: 40px;
+    }
+}
+
+.product-list {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    gap: 12px;
+    background: blueviolet;
+}
+.product-item {
+    background: white;
+    color: black;
+    padding: 36px;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .product-list {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product-list {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+}
+
+/* Device <= 600px hoặc Device >= 800px */
+/* 
+o - 600
+600- 800
+800 - 0
+*/
+.user {
+    color: black;
+}
+@media (max-width: 60px), (min-width: 800px) {
+    .user {
+        color: blue;
+    }
+}
+

@@ -1,0 +1,14 @@
+body {
+    background-color: #57C5B6;
+}
+img {
+    border-radius: 100%;
+}
+h1,
+h2,
+h3 {
+    color: #B8621B;
+}
+hr {
+    border: 3px dashed #245953;
+}
