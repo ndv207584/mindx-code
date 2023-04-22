@@ -13,18 +13,22 @@ console.log("Bình phương của từng số là:", binhphuong);
 
 //Bài 2 - em chưa làm được ạ =((
 let num2 = [3, 5, 6, 6, 7, 8, 8, 8, 9, 9, 33];
-let songuyento = [];
 for (let i = 0; i < num2.length; i++) {
     let flag = 0;
-    for (let j = 2; j < i; j++) {
-        if (i % j == 0) {
-            flag = 1;
-            break;
+    if (num2[i] < 2) {
+        flag=1;
+        break;
+    } else {
+        for (let j = 2; j < num2[i]; j++) {
+            if  (num2[i] % j == 0) {
+                flag = 1;
+                break;
+            }
+            flag = 0;
         }
     }
-
-    if (i > 1 && flag == 0) {
-        console.log(i);
+    if(num2[i] > 1 && flag === 0) {
+        console.log(num2[i]);
     }
 }
 
