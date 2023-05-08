@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+        #errorMsg {
+            color: red;
+        }
+
+        #login {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            margin: 0 auto;
+        }
+        input {
+            margin-top: 10px;
+        }
+        #errorAge {
+            color: red;
+        }
+    </style>
+</head>
+<body id="login" onclick="">
+    <!-- Full stack => Frontend, backend -->
+    <p id="errorMsg">
+        <!-- inner -->
+    </p>
+    <p id="errorAge"></p>
+    <form>
+        <input name="user" type="text" placeholder="Username"/>
+        <input name="email" type="email" placeholder="Email"/>
+        <input name="pwd" type="password" placeholder="Password"/>
+        <input name="age" type="number" placeholder="Tuổi" />
+        <input class="button is-success" type="submit" value="Submit"/>
+    </form>
+
+    <script>
+        // Bước 1: Tìm kiếm element
+        const loginForm = document.getElementById("login");
+        const errorEl = document.getElementById("errorMsg");
+        const ageRating = document.getElementById("errorAge");
+        
+        // Bước 2: Xử lý
+        //loginForm.onclick = function (e){
+          //      e.preventDefault();
+        //};
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const userEl = e.target.user; //gọi lấy thẻ input bằng name
+            const user = userEl.value; //lấy ra giá trị
+            if(user.length < 5) {
+                errorEl.innerHTML = "Username không hợp lệ";
+            } else {
+                errorEl.innerHTML = "";
+            }
+
+            //BTVN
+            const ageEl = e.target.age;
+            const age = ageEl.value;
+            if (age < 18) {
+                ageRating.innerHTML = "Tuổi không hợp lệ";
+            } else if(age > 56) {
+                ageRating.innerHTML = "Tuổi không hợp lệ";
+            } else {
+                ageRating.innerHTML = "";
+            }
+        });
+
+            
+    </script>   
+</body>
+</html>
